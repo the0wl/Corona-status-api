@@ -4,7 +4,7 @@ class Wom {
     async getCountryData(req, res) {
         const { country } = req.params
 
-        const browser = await puppy.launch()
+        const browser = await puppy.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']})
         const page = await browser.newPage()
         await page.goto('https://www.worldometers.info/coronavirus/')
 
