@@ -63,7 +63,7 @@ class Wom {
     }
 
     async getAllData(req, res) {
-        const browser = await puppy.launch()
+        const browser = await puppy.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']})
         const page = await browser.newPage()
         await page.goto('https://www.worldometers.info/coronavirus/')
 
@@ -133,7 +133,7 @@ class Wom {
     }
 
     async getWorldData(req, res) {
-        const browser = await puppy.launch()
+        const browser = await puppy.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']})
         const page = await browser.newPage()
         await page.goto('https://www.worldometers.info/coronavirus/')
 
