@@ -1,3 +1,5 @@
 import app from './app'
 
-app.listen(54984)
+var port = process.env.PORT || 3000
+
+app.listen(port)
